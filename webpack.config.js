@@ -4,7 +4,7 @@ module.exports = {
     mode: "production",
     devtool: "source-map",
     resolve: {
-        extensions: [".ts", ".tsx"]
+        extensions: [".js"]
     },
     output: {
         path: path.resolve(__dirname, "server/public/dist"),
@@ -12,20 +12,14 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.ts(x?)$/,
+                test: /\.js$/,
                 exclude: /node_modules/,
                 use: [
                     {
-                        loader: "ts-loader"
+                        loader: "babel-loader"
                     }
                 ]
             },
-            // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
-            {
-                enforce: "pre",
-                test: /\.js$/,
-                loader: "source-map-loader"
-            }
         ]
     },
     // When importing a module whose path matches one of the following, just
