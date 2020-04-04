@@ -1,11 +1,12 @@
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+import * as React from 'react'
+import * as ReactDOM from 'react-dom'
 import {
     BrowserRouter as Router,
     Switch,
     Route,
     Link
-  } from "react-router-dom";
+  } from "react-router-dom"
+  import SideBar from "./components/SideBar"
 
 
 ReactDOM.render(
@@ -16,8 +17,8 @@ ReactDOM.render(
         </ul>
         <Switch>
             <Route path="/about"><h1>ABOUT</h1></Route>
-            <Route path="/"><h1>HOME</h1></Route>
+            <Route path="/"><SideBar /></Route>
         </Switch>
     </Router>,
     document.getElementById('app')
-);
+)

@@ -4,7 +4,8 @@ module.exports = {
     mode: "production",
     devtool: "source-map",
     resolve: {
-        extensions: [".js"]
+        extensions: [".js"],
+        modules: ['node_modules'],
     },
     output: {
         path: path.resolve(__dirname, "server/public/dist"),
@@ -18,6 +19,15 @@ module.exports = {
                     {
                         loader: "babel-loader"
                     }
+                ]
+            },
+            {
+                test: /\.scss$/,
+                exclude: /node_modules/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    'sass-loader',
                 ]
             },
         ]
