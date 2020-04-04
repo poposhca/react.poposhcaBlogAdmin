@@ -5,7 +5,7 @@ module.exports = {
     devtool: "source-map",
     resolve: {
         extensions: [".js"],
-        modules: ['node_modules'],
+        modules: ['node_modules', 'src'],
     },
     output: {
         path: path.resolve(__dirname, "server/public/dist"),
@@ -13,21 +13,21 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.s[ac]ss$/,
+                exclude: /node_modules/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    'sass-loader',
+                ]
+            },
+            {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 use: [
                     {
                         loader: "babel-loader"
                     }
-                ]
-            },
-            {
-                test: /\.scss$/,
-                exclude: /node_modules/,
-                use: [
-                    'style-loader',
-                    'css-loader',
-                    'sass-loader',
                 ]
             },
         ]

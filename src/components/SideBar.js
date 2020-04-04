@@ -1,9 +1,13 @@
 import './SideBar.styles.scss';
 
 const SideBar = () => (
-    <React.Fragment>
-        <button className="button is-primary">Primary</button>
-    </React.Fragment>
+    <aside class="menu">
+        <p class="menu-label">Menu</p>
+        <ul class="menu-list">
+            <li><a>Uno</a></li>
+            <li><a>Dos</a></li>
+        </ul>
+    </aside>
 )
 
 export default SideBar
