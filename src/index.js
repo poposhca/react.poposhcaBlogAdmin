@@ -7,6 +7,8 @@ import {
   } from "react-router-dom"
   import routes from './constants/routes'
   import SideBar from "./components/SideBar"
+  import ArticlesHome from "./views/ArticlesHome"
+  import EditArticle from "./views/EditArticle"
 
 
 ReactDOM.render(
@@ -24,8 +26,11 @@ ReactDOM.render(
                         <Route path={routes.drafts}>
                             <h1>Drafts</h1>
                         </Route>
+                        <Route path={routes.edit}>
+                            <EditArticle />
+                        </Route>
                         <Route path={routes.home}>
-                            <h1>Home</h1>
+                            <ArticlesHome />
                         </Route>
                     </Switch>
                 </div>
