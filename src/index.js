@@ -4,11 +4,11 @@ import {
     BrowserRouter as Router,
     Switch,
     Route
-  } from "react-router-dom"
-  import routes from './constants/routes'
-  import SideBar from "./components/SideBar"
-  import ArticlesHome from "./views/ArticlesHome"
-  import EditArticle from "./views/EditArticle"
+} from 'react-router-dom'
+import routes from './constants/routes'
+import SideBar from './components/SideBar'
+import ArticlesHome from './views/ArticlesHome'
+import EditArticle from './views/EditArticle'
 
 
 ReactDOM.render(

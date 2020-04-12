@@ -4,9 +4,9 @@ import routes from '../constants/routes'
 
 const ArticlesHome = () => (
     <Link to={routes.edit}>
-    <figure className="image is-48x48">
-        <img className="is-rounded" src="images/plusButton.jpg" />
-    </figure>
+        <figure className="image is-48x48">
+            <img className="is-rounded" src="images/plusButton.jpg" />
+        </figure>
     </Link>
 )
 
