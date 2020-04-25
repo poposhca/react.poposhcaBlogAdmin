@@ -1,14 +1,14 @@
 const path = require('path')
 
 module.exports = {
-    mode: "production",
-    devtool: "source-map",
+    mode: 'production',
+    devtool: 'source-map',
     resolve: {
-        extensions: [".js"],
+        extensions: ['.js'],
         modules: ['node_modules', 'src'],
     },
     output: {
-        path: path.resolve(__dirname, "server/public/dist"),
+        path: path.resolve(__dirname, 'server/public/dist'),
     },
     module: {
         rules: [
@@ -26,7 +26,7 @@ module.exports = {
                 exclude: /node_modules/,
                 use: [
                     {
-                        loader: "babel-loader"
+                        loader: 'babel-loader'
                     }
                 ]
             },
@@ -36,8 +36,9 @@ module.exports = {
     // assume a corresponding global variable exists and use that instead.
     // This is important because it allows us to avoid bundling all of our
     // dependencies, which allows browsers to cache those libraries between builds.
-    /*externals: {
-        "react": "React",
-        "react-dom": "ReactDOM"
-    }*/
+    externals: {
+        'react': 'React',
+        'react-dom': 'ReactDOM',
+        'quill': 'Quill'
+    }
 }

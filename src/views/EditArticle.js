@@ -3,6 +3,9 @@ import Quill from 'quill'
 
 const EditArticle = () => {
     const [quillEditor, setQuillEditor] = React.useState(null)
+    const [quillDelta, setQuillDelta] = React.useState(null)
+
+    //Execute once to set Quill editor
     React.useEffect(() => {
         const newQuillEditor = new Quill('#editor', {
             modules: {
@@ -12,12 +15,16 @@ const EditArticle = () => {
             },
             theme: 'snow',
         })
-        setQuillEditor(newQuillEditor);
+        setQuillEditor(newQuillEditor)
+        //TODO: Load delta if exists
     }, [])
-    const getDelta = () => {
-        const delta = quillEditor.getContents()
-        console.log(delta)
-    }
+
+    //Update delta
+    React.useEffect(() => {
+        console.log(quillDelta)
+        //TODO save delta in local storage & in server
+    }, [quillDelta])
+
     return (
         <section className="section is-medium">
             <h1 className="title">Articulo</h1>
@@ -27,7 +34,7 @@ const EditArticle = () => {
             <div className="field">
                 <label className="subtitle">Contenido</label>
                 <div id="editor" />
-                <input type="button" onClick={() => getDelta()}>Test</input>
+                <input type="button" onClick={() => setQuillDelta(quillEditor.getContents())} />
             </div>
         </section>
     )
